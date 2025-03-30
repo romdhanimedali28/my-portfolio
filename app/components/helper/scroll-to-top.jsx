@@ -12,6 +12,7 @@ const ScrollToTop = () => {
   const [isBrowser, setIsBrowser] = useState(false);
 
   useEffect(() => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
     setIsBrowser(true);
     
     const handleScroll = () => {
