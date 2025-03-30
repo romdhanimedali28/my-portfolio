@@ -11,7 +11,6 @@ const ScrollToTop = () => {
   const [btnCls, setBtnCls] = useState(DEFAULT_BTN_CLS + " hidden");
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
 
     const handleScroll = () => {
       if (window.scrollY > SCROLL_THRESHOLD) {
