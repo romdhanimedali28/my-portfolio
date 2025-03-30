@@ -22,14 +22,29 @@ function HeroSection() {
 
       <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8">
         <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
-          <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
+          {/* <h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
             Hello, <br />
             This is {' '}
-            <span className=" text-pink-500">{personalData.name}</span>
+            <span className=" text-[#16f2b3]">{personalData.name}</span>
             {` , I'm a Professional `}
             <span className=" text-[#16f2b3]">{personalData.designation}</span>
             .
-          </h1>
+          </h1> */}
+
+
+<h1 className="text-3xl font-bold leading-10 text-white md:font-extrabold lg:text-[2.8rem] lg:leading-[3.8rem] bg-gradient-to-r from-[#0D1224] to-[#1E2A4A] p-6 rounded-xl shadow-lg border border-[#2A3A6A]">
+  <span className="animate-slideInLeft">Welcome,</span> <br />
+  <span className="animate-slideInLeft delay-150">I&apos;m </span>
+  <span className="text-[#6EE7B7] animate-glow font-extrabold tracking-wide">
+    {personalData.name}
+  </span>
+  <span className="animate-slideInRight delay-300">, a </span>
+  <span className="text-[#6EE7B7] animate-bounceIn font-semibold bg-[#10b98119] px-3 py-1 rounded-md border border-[#10b98119]">
+    {personalData.designation}
+  </span>
+  <span className="animate-slideInRight delay-450">.</span>
+</h1>
+
 
           <div className="my-12 flex items-center gap-5">
             <Link
@@ -46,27 +61,7 @@ function HeroSection() {
             >
               <BsLinkedin size={30} />
             </Link>
-            <Link
-              href={personalData.facebook}
-              target='_blank'
-              className="transition-all text-pink-500 hover:scale-125 duration-300"
-            >
-              <FaFacebook size={30} />
-            </Link>
-            <Link
-              href={personalData.leetcode}
-              target='_blank'
-              className="transition-all text-pink-500 hover:scale-125 duration-300"
-            >
-              <SiLeetcode size={30} />
-            </Link>
-            <Link
-              href={personalData.twitter}
-              target='_blank'
-              className="transition-all text-pink-500 hover:scale-125 duration-300"
-            >
-              <FaTwitterSquare size={30} />
-            </Link>
+            
           </div>
 
           <div className="flex items-center gap-3">
@@ -108,30 +103,26 @@ function HeroSection() {
               <div>
                 <span className="ml-4 lg:ml-8 mr-2 text-white">name:</span>
                 <span className="text-gray-400">{`'`}</span>
-                <span className="text-amber-300">Abu Said</span>
+                <span className="text-amber-300">Mohamed Ali</span>
                 <span className="text-gray-400">{`',`}</span>
               </div>
               <div className="ml-4 lg:ml-8 mr-2">
-                <span className=" text-white">skills:</span>
-                <span className="text-gray-400">{`['`}</span>
-                <span className="text-amber-300">React</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">NextJS</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Redux</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Express</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">NestJS</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">MySql</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">MongoDB</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Docker</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">AWS</span>
-                <span className="text-gray-400">{"'],"}</span>
+              <span className="text-white">skills:</span>
+<span className="text-gray-400">{`['`}</span>
+<span className="text-amber-300">Kubernetes</span>
+<span className="text-gray-400">{"', '"}</span>
+<span className="text-amber-300">Docker</span>
+<span className="text-gray-400">{"', '"}</span>
+<span className="text-amber-300">Ansible</span>
+<span className="text-gray-400">{"', '"}</span>
+<span className="text-amber-300">Terraform</span>
+<span className="text-gray-400">{"', '"}</span>
+<span className="text-amber-300">Jenkins</span>
+<span className="text-gray-400">{"', '"}</span>
+<span className="text-amber-300">OpenStack</span>
+<span className="text-gray-400">{"', '"}</span>
+<span className="text-amber-300">Flutter</span>
+<span className="text-gray-400">{"'],"}</span>
               </div>
               <div>
                 <span className="ml-4 lg:ml-8 mr-2 text-white">hardWorker:</span>

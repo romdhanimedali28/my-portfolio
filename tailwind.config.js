@@ -23,6 +23,12 @@ module.exports = {
           "3xl": "5rem",
         },
       },
+      animation: {
+        slideInLeft: 'slideInLeft 0.8s ease-out forwards',
+        slideInRight: 'slideInRight 0.8s ease-out forwards',
+        glow: 'glow 2s ease-in-out infinite',
+        bounceIn: 'bounceIn 0.6s ease-out forwards',
+      },
 
       extend: {
         screens: {
