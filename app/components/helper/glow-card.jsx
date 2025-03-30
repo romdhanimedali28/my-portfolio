@@ -4,11 +4,10 @@ import { useEffect } from "react";
 
 const GlowCard = ({ children, identifier }) => {
   useEffect(() => {
-    if (typeof window === 'undefined' || typeof document === 'undefined') return;
+    if (typeof document === "undefined") return; // Skip on server
+
     const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
     const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
-
-    if (!CONTAINER || !CARDS) return;
 
     const CONFIG = {
       proximity: 40,
@@ -19,10 +18,11 @@ const GlowCard = ({ children, identifier }) => {
       opacity: 0,
     };
 
+ 
+
     const UPDATE = (event) => {
       for (const CARD of CARDS) {
         const CARD_BOUNDS = CARD.getBoundingClientRect();
-
         if (
           event?.x > CARD_BOUNDS.left - CONFIG.proximity &&
           event?.x < CARD_BOUNDS.left + CARD_BOUNDS.width + CONFIG.proximity &&
@@ -43,12 +43,12 @@ const GlowCard = ({ children, identifier }) => {
           (Math.atan2(event?.y - CARD_CENTER[1], event?.x - CARD_CENTER[0]) *
             180) /
           Math.PI;
-
         ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
-
         CARD.style.setProperty("--start", ANGLE + 90);
       }
     };
+
+    document.body.addEventListener("pointermove", UPDATE);
 
     const RESTYLE = () => {
       CONTAINER.style.setProperty("--gap", CONFIG.gap);
@@ -63,8 +63,7 @@ const GlowCard = ({ children, identifier }) => {
     RESTYLE();
     UPDATE();
 
-    document.body.addEventListener("pointermove", UPDATE);
-
+    // Cleanup
     return () => {
       document.body.removeEventListener("pointermove", UPDATE);
     };
@@ -72,9 +71,7 @@ const GlowCard = ({ children, identifier }) => {
 
   return (
     <div className={`glow-container-${identifier} glow-container`}>
-      <article
-        className={`glow-card glow-card-${identifier} h-fit cursor-pointer border border-[#2a2e5a] transition-all duration-300 relative bg-[#101123] text-gray-200 rounded-xl hover:border-transparent w-full`}
-      >
+      <article className={`glow-card glow-card-${identifier} h-fit cursor-pointer border border-[#2a2e5a] transition-all duration-300 relative bg-[#101123] text-gray-200 rounded-xl hover:border-transparent w-full`}>
         <div className="glows"></div>
         {children}
       </article>
