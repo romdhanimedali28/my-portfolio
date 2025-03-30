@@ -4,6 +4,7 @@ import { useEffect } from "react";
 
 const GlowCard = ({ children, identifier }) => {
   useEffect(() => {
+    if (typeof window === "undefined") return;
 
     const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
     const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
@@ -17,7 +18,11 @@ const GlowCard = ({ children, identifier }) => {
       opacity: 0,
     };
 
- 
+    const createTag = () => { // If here
+      const tag = document.createElement("div");
+      tag.className = "glow-tag";
+      return tag;
+    };
 
     const UPDATE = (event) => {
       for (const CARD of CARDS) {
@@ -32,12 +37,10 @@ const GlowCard = ({ children, identifier }) => {
         } else {
           CARD.style.setProperty("--active", CONFIG.opacity);
         }
-
         const CARD_CENTER = [
           CARD_BOUNDS.left + CARD_BOUNDS.width * 0.5,
           CARD_BOUNDS.top + CARD_BOUNDS.height * 0.5,
         ];
-
         let ANGLE =
           (Math.atan2(event?.y - CARD_CENTER[1], event?.x - CARD_CENTER[0]) *
             180) /
@@ -48,7 +51,6 @@ const GlowCard = ({ children, identifier }) => {
     };
 
     document.body.addEventListener("pointermove", UPDATE);
-
     const RESTYLE = () => {
       CONTAINER.style.setProperty("--gap", CONFIG.gap);
       CONTAINER.style.setProperty("--blur", CONFIG.blur);
@@ -58,11 +60,9 @@ const GlowCard = ({ children, identifier }) => {
         CONFIG.vertical ? "column" : "row"
       );
     };
-
     RESTYLE();
     UPDATE();
 
-    // Cleanup
     return () => {
       document.body.removeEventListener("pointermove", UPDATE);
     };
