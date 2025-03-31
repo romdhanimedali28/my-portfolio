@@ -83,6 +83,16 @@ import sqlalchemy from '../app/assets/svg/skills/sqlalchemy.svg'
 import fastapi from '../app/assets/svg/skills/fastapi.svg'
 
 
+import openstack from '../app/assets/svg/skills/openstack.svg'; // Download required
+import terraform from '../app/assets/svg/skills/terraform.svg'; // Download required
+import ansible from '../app/assets/svg/skills/ansible.svg';     // Download required
+import jenkins from '../app/assets/svg/skills/jenkins.svg';     // Download required
+import bash from '../app/assets/svg/skills/bash.svg';           // Download required
+import springboot from '../app/assets/svg/skills/springboot.svg'; // Download required
+import android from '../app/assets/svg/skills/android.svg';     // Download required
+import scrum from '../app/assets/svg/skills/scrum.svg';         // Download required
+import jira from '../app/assets/svg/skills/jira.svg';         // Download required
+
 
 export const skillsImage = (skill) => {
   const skillID = skill.toLowerCase();
@@ -251,6 +261,24 @@ export const skillsImage = (skill) => {
       return sqlalchemy;
     case 'fastapi':
       return fastapi;
+    case 'openstack':           // Download openstack.svg
+    return openstack;
+  case 'terraform':           // Download terraform.svg
+    return terraform;
+  case 'ansible':             // Download ansible.svg
+    return ansible;
+  case 'jenkins':             // Download jenkins.svg
+    return jenkins;
+  case 'bash':                // Download bash.svg
+    return bash;
+  case 'spring boot':         // Download springboot.svg
+    return springboot;
+  case 'android native':      // Download android.svg
+    return android;
+  case 'scrum':         // Download scrum.svg
+    return scrum;
+  case 'jira':
+    return jira;
     default:
       break;
   }
