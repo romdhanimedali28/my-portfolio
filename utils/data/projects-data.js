@@ -11,7 +11,7 @@ export const projectsData = [
       id: 2,
       name: 'Travel Booking Mobile App',
       description: "Built a Flutter mobile application for travel bookings with enhanced features and improved user experience. Integrated Git for version control and team collaboration.",
-      tools: ['Flutter', 'Dart', 'Git', 'Firebase', 'REST API'],
+      tools: ['Flutter', 'Dart', 'Git', 'Jira', 'REST API' ,'Agile Scrum'],
       role: 'Mobile Developer',
       demo: ''
     },
