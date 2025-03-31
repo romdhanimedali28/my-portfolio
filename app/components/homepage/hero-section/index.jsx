@@ -44,7 +44,8 @@ function HeroSection() {
               <BsGithub size={30} />
             </Link>
             <Link
-              href={personalData.linkedIn}
+              href="https://www.linkedin.com/in/romdhani-mohamed-ali-a681a9183/"
+              
               target='_blank'
               className="transition-all text-pink-500 hover:scale-125 duration-300"
             >
