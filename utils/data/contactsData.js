@@ -3,5 +3,5 @@ export const contactsData = {
     phone: '+216 27 293 850',
     address: 'Tunis, Tunisia',
     github: 'https://github.com/romdhanimedali28',
-    linkedIn: 'https://linkedin.com/in/romdhanimohamed-ali-a681a9183',
+    linkedIn: 'https://www.linkedin.com/in/romdhani-mohamed-ali-a681a9183/',
 }
